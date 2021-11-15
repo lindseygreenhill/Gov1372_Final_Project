@@ -43,14 +43,82 @@ twitter_handles <- twitter_handles %>%
   drop_na()
 
 # Now I am using the rtweets package to create the tweets data fram. Code
-# adapted from Blake Robert Mills article
+# adapted from Blake Robert Mills article. I keep on getting errors for hitting
+# rate limits. I think to solve this I need to do it in smaller chunks. 
+
+# chunk 1
+
+handles_1 <- twitter_handles %>%
+  arrange(name) %>%
+  slice(1:50)
+
+#Tweets_1 <- vector()
+#for(i in handles_1$handle){
+#  df <- get_timeline(i, n = 3200)
+#  Tweets_1 <- rbind(Tweets_1, df)
+# }
+
+# save(Tweets_1, file = "tweets_1.RData")
 
 
-Tweets <- vector()
-for(i in twitter_handles$handle){
-  df <- get_timeline(i, n = 3200)
-  Tweets <- rbind(Tweets, df)
-}
+# chunk 2
+
+#handles_2 <- twitter_handles %>%
+#  arrange(name) %>%
+#  slice(51:100)
+
+#Tweets_2 <- vector()
+# for(i in handles_2$handle){
+#  df <- get_timeline(i, n = 3200)
+#  Tweets_2 <- rbind(Tweets_2, df)
+# }
+
+# save(Tweets_2, file = "tweets_2.RData")
+
+# chunk 3
+
+handles_3<- twitter_handles %>%
+  arrange(name) %>%
+  slice(101:150)
+
+ # Tweets_3 <- vector()
+ #for(i in handles_3$handle){
+  #df <- get_timeline(i, n = 3200)
+  #Tweets_3 <- rbind(Tweets_3, df)
+ #}
+
+ # save(Tweets_3, file = "tweets_3.RData")
+
+# chunk 4
+
+handles_4 <- twitter_handles %>%
+  arrange(name) %>%
+  slice(151:200)
+
+# Tweets_4 <- vector()
+
+#for(i in handles_4$handle){
+#  df <- get_timeline(i, n = 3200)
+#  Tweets_4 <- rbind(Tweets_4, df)
+# }
+
+# save(Tweets_4, file = "tweets_4.RData")
+
+
+# chunk 5
+
+handles_5 <- twitter_handles %>%
+  arrange(name) %>%
+  slice(201:250)
+
+# Tweets_5 <- vector()
+
+#for(i in handles_5$handle){
+ # df <- get_timeline(i, n = 3200)
+#  Tweets_5 <- rbind(Tweets_5, df)
+# }
+
+# save(Tweets_5, file = "tweets_5.RData")
 
 
 # I still don't have complete data frame but I am going to clean it anyways
